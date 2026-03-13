@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -6,37 +6,97 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-bg: #080B14;
-  --color-accent: #00C2FF;
-  --color-secondary: #F5A623;
+  --color-bg: #010409;
+  --color-bg-page: #010409;
+  --color-bg-card: #0d1117;
+  --color-bg-input: #161b22;
+  --color-accent: #c7f284;
+  --color-secondary: #9945FF;
+  --color-border-default: #30363d;
+  --color-border-focus: #58a6ff;
   --color-text-primary: #FFFFFF;
-  --color-text-secondary: #8A9BB0;
-  --color-success: #00E676;
-  --color-alert: #FF4444;
-  --color-card-bg: #0F1829;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #484f58;
+  --color-success: #22C55E;
+  --color-alert: #EF4444;
+  --color-card-bg: #131722;
+
+  --color-accent-blue: #58a6ff;
+  --color-accent-gold: #d29922;
+  --color-jupiter-green: #c7f284;
+  --color-long-green: #238636;
+  --color-short-red: #da3633;
+  --color-gov-purple: #8957e5;
+  --color-warning-orange: #d29922;
 }
 
 @layer base {
   body {
-    @apply bg-bg text-text-primary font-sans antialiased;
+    @apply bg-bg text-text-primary font-sans antialiased selection:bg-jupiter-green/30;
+  }
+}
+
+@layer components {
+  .action-card {
+    @apply bg-bg-card border border-border-default rounded-[24px] p-6 transition-all duration-200 hover:border-border-default/80 shadow-xl;
+  }
+
+  .input-field {
+    @apply bg-bg-input border border-border-default rounded-2xl h-16 px-4 flex items-center transition-all focus-within:border-jupiter-green/50 focus-within:ring-4 focus-within:ring-jupiter-green/5;
+  }
+
+  .btn-primary {
+    @apply bg-jupiter-green text-bg-page font-extrabold rounded-2xl h-14 w-full flex items-center justify-center transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(199,242,132,0.15)];
+  }
+
+  .btn-ghost {
+    @apply border border-border-default text-text-primary rounded-2xl h-12 px-4 flex items-center justify-center transition-all hover:bg-white/5 hover:border-text-secondary/30;
+  }
+
+  .btn-long {
+    @apply bg-[#238636] text-white font-bold rounded-2xl h-12 px-4 flex items-center justify-center transition-all hover:bg-[#2ea043] shadow-lg;
+  }
+
+  .btn-short {
+    @apply bg-[#da3633] text-white font-bold rounded-2xl h-12 px-4 flex items-center justify-center transition-all hover:bg-[#f85149] shadow-lg;
+  }
+
+  .badge-healthy {
+    @apply bg-long-green/12 text-long-green px-2 py-0.5 rounded text-xs font-medium flex items-center gap-1.5;
+  }
+
+  .badge-warning {
+    @apply bg-warning-orange/12 text-warning-orange px-2 py-0.5 rounded text-xs font-medium flex items-center gap-1.5;
+  }
+
+  .badge-danger {
+    @apply bg-short-red/12 text-short-red px-2 py-0.5 rounded text-xs font-medium flex items-center gap-1.5;
+  }
+
+  .mono {
+    @apply font-mono;
+  }
+
+  .label-sm {
+    @apply font-semibold text-[11px] uppercase tracking-wider text-text-secondary;
   }
 }
 
 .glass-card {
-  background: rgba(15, 24, 41, 0.85);
-  border: 1px solid rgba(0, 194, 255, 0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(19, 23, 34, 0.8);
+  border: 1px solid rgba(199, 242, 132, 0.1);
+  backdrop-filter: blur(16px);
 }
 
 .glow-primary {
-  box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
+  box-shadow: 0 0 30px rgba(199, 242, 132, 0.2);
 }
 
 .grid-bg {
-  background-image: radial-gradient(circle at 2px 2px, rgba(0, 194, 255, 0.05) 1px, transparent 0);
-  background-size: 40px 40px;
+  background-image: radial-gradient(circle at 2px 2px, rgba(199, 242, 132, 0.03) 1px, transparent 0);
+  background-size: 32px 32px;
 }
 
 .orb-glow {
-  background: radial-gradient(circle at center, rgba(0, 194, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(199, 242, 132, 0.08) 0%, transparent 70%);
 }
