@@ -327,7 +327,7 @@ const Navbar = ({
           onClick={() => setTab(0)}
         >
           <img
-            src="/logo.jpg"
+            src="/logo1.jpg"
             alt="Pillars Finance Logo"
             className="w-14 h-14 object-contain rounded-xl"
           />

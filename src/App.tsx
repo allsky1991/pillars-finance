@@ -23,7 +23,7 @@ const Navbar = ({ setTab }: any) => (
     <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <div className="flex items-center gap-3">
         <img
-          src="/logo.jpg"
+          src="/logo1.jpg"
           alt="Pillars Finance Logo"
           className="w-14 h-14 object-contain rounded-xl"
           referrerPolicy="no-referrer"
@@ -32,9 +32,6 @@ const Navbar = ({ setTab }: any) => (
               "https://picsum.photos/seed/pillars/100/100";
           }}
         />
-        <span className="font-display font-bold text-2xl tracking-tight">
-          Pillars Finance
-        </span>
       </div>
 
       <div className="hidden md:flex items-center gap-10 text-lg font-semibold text-text-secondary">
@@ -548,14 +545,11 @@ const Footer = () => (
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="flex items-center gap-3">
             <img
-              src="/logo.jpg"
+              src="/logo1.jpg"
               alt="Pillars Finance Logo"
               className="w-14 h-14 object-contain rounded-xl"
               referrerPolicy="no-referrer"
             />
-            <span className="font-display font-bold text-2xl tracking-tight">
-              Pillars Finance
-            </span>
           </div>
 
           <p className="text-white/60 text-lg">
