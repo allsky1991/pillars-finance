@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jup-bg: #0a0b0d;
+  --color-jup-card: #13151a;
+  --color-jup-border: rgba(255, 255, 255, 0.08);
+  --color-jup-primary: #c7f284;
+  --color-jup-primary-hover: #b5e070;
+  --color-jup-secondary: #1e2128;
+  --color-jup-text-dim: #94a3b8;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-jup-bg text-white antialiased;
+  }
+}
+
+.jup-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-jup-primary to-emerald-400;
+}
+
+.jup-card {
+  @apply bg-jup-card border border-jup-border rounded-2xl overflow-hidden shadow-xl;
+}
+
+.jup-input {
+  @apply bg-jup-bg border border-jup-border rounded-xl px-4 py-3 focus:outline-none focus:border-jup-primary/50 transition-colors;
+}
+
+.jup-button-primary {
+  @apply bg-jup-primary text-black font-bold py-3 px-6 rounded-xl hover:bg-jup-primary-hover transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.jup-button-secondary {
+  @apply bg-jup-secondary text-white font-semibold py-3 px-6 rounded-xl hover:bg-white/5 transition-all active:scale-[0.98];
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d3139;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d4149;
+}
